@@ -1,0 +1,15 @@
+[package]
+name = "iomcbf"
+version = "0.1.0"
+edition = "2021"
+authors = ["Pierre Peterlongo <pierre.peterlongo@inria.fr>",]
+description = "A simple implementation of the IOM-CBF algorithm"
+license = "A-GPL3"
+
+[dependencies]
+# Error management
+anyhow           = { version = "1" }
+
+
+# Radom number generation
+rand             = { version = "0.9.0" }
