@@ -13,3 +13,7 @@ anyhow           = { version = "1" }
 
 # Radom number generation
 rand             = { version = "0.9.0" }
+
+
+# Bit vector
+bitvec           = { version = "1.0.1" }

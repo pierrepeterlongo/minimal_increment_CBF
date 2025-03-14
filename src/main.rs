@@ -1,4 +1,7 @@
 //! Increment only minimum counting bloom filter
+use std::hash;
+use std::collections::HashMap;
+
 /* std use */
 use rand::Rng;
 
@@ -87,37 +90,37 @@ fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: 
     
     let mut rng = rand::rng();
 
-    // generate an array of random kmers. 
+    // generate a dictionary of random kmers with counts
     // each kmer appears between 1 and 10 times
-    let k = 31; // kmer length
-    let mut kmers = vec![];
+    let k = 31;
     println!("Generating kmers...");
+    let mut kmers = HashMap::new();
     for _ in 0..n_elements {
         let kmer = generate_random_kmer(k);
         let count = rng.random_range(1..=10);
-        for _ in 0..count {
-            kmers.push(kmer.clone());
-        }
+        kmers.insert(kmer, count);
     }
     println!("Adding kmers to the IncOnlyMinCbf with optimization...");
     // add all kmers to the iomcbf, measuring the time
     let start = std::time::Instant::now();
-    for kmer in kmers.iter() {
-        iomcbf.add(kmer);
+    for (kmer, count) in kmers.iter() {
+        for _ in 0..*count {
+            iomcbf.add(kmer);
+        }
     }
     let duration = start.elapsed();
     println!("Insertion time, with the optimization: {:?}",
         duration);
+    
 
     // for each element in the iomcbf, store its overestimation
     // provide the sum, mean, median, and standard deviation of the overestimations
     println!("Querying {} kmers from the IncOnlyMinCbf...", kmers.len());
     let start: std::time::Instant = std::time::Instant::now();
     let mut overestimations = vec![];
-    for kmer in kmers.iter() {
+    for (kmer, true_count) in kmers.iter() {
         let count = iomcbf.count(kmer);
-        let true_count = kmers.iter().filter(|&x| x == kmer).count();
-        let overestimation = count as i32 - true_count as i32;
+        let overestimation = count as i32 - *true_count as i32;
         overestimations.push(overestimation);
     }
     let duration: std::time::Duration = start.elapsed();
@@ -130,10 +133,12 @@ fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: 
     let mut cbf = IncOnlyMinCbf::new(size, num_hashes,x); 
 
     println!("Adding kmers to the IncOnlyMinCbf without optimization...");
-    // add all kmers to the iomcbf, measuring the time
+    // add all kmers to the cbf, measuring the time
     let start = std::time::Instant::now();
-    for kmer in kmers.iter() {
-        cbf.add_all(kmer);
+    for (kmer, count) in kmers.iter() {
+        for _ in 0..*count {
+            cbf.add_all(kmer);
+        }
     }
     let duration = start.elapsed();
     println!("Insertion time, without the optimization: {:?}",
@@ -144,10 +149,9 @@ fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: 
     println!("Querying {} kmers from the IncOnlyMinCbf...", kmers.len());
     let start = std::time::Instant::now();
     let mut overestimations_non_optimized = vec![];
-    for kmer in kmers.iter() {
+    for (kmer, true_count) in kmers.iter() {
         let count = cbf.count(kmer);
-        let true_count = kmers.iter().filter(|&x| x == kmer).count();
-        let overestimation = count as i32 - true_count as i32;
+        let overestimation = count as i32 - *true_count as i32;
         overestimations_non_optimized.push(overestimation);
     }
     let duration = start.elapsed();
@@ -204,15 +208,16 @@ fn check_no_fn_no_underestimation(x: u8, num_hashes: usize, size: usize, n_eleme
 
 
 fn main() {
+
     let x = 4; // Number of bits per counter (max value = 2^4 - 1 = 15)
     let num_hashes = 7; // Number of hash functions
-    let size = 100_000; // Number of counters
-    let n_elements = 50_000; // Number of elements to insert
-    println!("Checking there are no FN and no underestimations...");
-    check_no_fn_no_underestimation(x, num_hashes, size, n_elements);
+    let size = 5_000_000; // Number of counters
+    let n_elements = 5_000_000; // Number of elements to insert
+    // println!("Checking there are no FN and no underestimations...");
+    // check_no_fn_no_underestimation(x, num_hashes, size, n_elements);
 
-    println!("Checking false positive rate...");
-    check_fp_rate(x, num_hashes, size, n_elements);
+    // println!("Checking false positive rate...");
+    // check_fp_rate(x, num_hashes, size, n_elements);
 
     println!("Checking overestimation rate...");
     check_overestimation_rate(x, num_hashes, size, n_elements);

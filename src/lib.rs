@@ -1,8 +1,11 @@
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
+use bitvec::prelude::*;
+
+
 pub struct IncOnlyMinCbf{
-    bit_array: Vec<u8>,  // Stores all counters in a packed format
+    bb: BitBox,  // Stores all counters in a packed format
     size: usize,         // Total number of counters
     num_hashes: usize,   // Number of hash functions
     bits_per_counter: u8, // Number of bits per counter
@@ -15,11 +18,10 @@ impl IncOnlyMinCbf {
         assert!(bits_per_counter > 0 && bits_per_counter <= 8, "bits_per_counter must be between 1 and 8");
 
         let max_value = (1 << bits_per_counter) - 1; // 2^x - 1
-        let bits_total = size * bits_per_counter as usize;
-        let byte_size = (bits_total + 7) / 8; // Round up to nearest byte
+
 
         IncOnlyMinCbf {
-            bit_array: vec![0; byte_size],
+            bb: bitbox![0; size * bits_per_counter as usize],
             size,
             num_hashes,
             bits_per_counter,
@@ -41,49 +43,53 @@ impl IncOnlyMinCbf {
 
     /// Read a counter value from the bit array
     fn get_counter(&self, index: usize) -> u32 {
-        let bit_position = index * self.bits_per_counter as usize;
-        let byte_index = bit_position / 8;
-        let bit_offset = bit_position % 8;
-
+        let first_bit = index * self.bits_per_counter as usize;
+        let last_bit = first_bit + self.bits_per_counter as usize;
         let mut value: u32 = 0;
-        for i in 0..self.bits_per_counter {
-            let bit = ((self.bit_array[byte_index + ((bit_offset as usize + i as usize) / 8)] >> ((bit_offset as usize + i as usize) % 8)) & 1) as u32;
-            value |= bit << i;
+        let mut pos = 0;
+        for i in first_bit..last_bit {
+            if self.bb[i] == true {
+                value += 1 << pos;
+            }
+            pos += 1;
         }
         value
     }
 
     /// check if a counter value is zero
     fn is_zero(&self, index: usize) -> bool {
-        let bit_position = index * self.bits_per_counter as usize;
-        let byte_index = bit_position / 8;
-        let bit_offset = bit_position % 8;
-
-        for i in 0..self.bits_per_counter {
-            let bit = ((self.bit_array[byte_index + ((bit_offset as usize + i as usize) / 8)] >> ((bit_offset as usize + i as usize) % 8)) & 1) as u32;
-            if bit != 0 {
+        // returns true if all bits from index * self.bits_per_counter as usize to (index + 1) * self.bits_per_counter as usize are zero
+        let first_bit = index * self.bits_per_counter as usize;
+        let last_bit = first_bit + self.bits_per_counter as usize;
+        for i in first_bit..last_bit {
+            if self.bb[i] {
                 return false;
             }
         }
         true
     }
 
+
     /// increment a counter value in the bit array
     fn increment_counter(&mut self, index: usize) {
-        let bit_position = index * self.bits_per_counter as usize;
-        let byte_index = bit_position / 8;
-        let bit_offset = bit_position % 8;
+        let first_bit = index * self.bits_per_counter as usize;
+        let last_bit = first_bit + self.bits_per_counter as usize;
 
-        for i in 0..self.bits_per_counter {
-            let byte_pos = byte_index + (bit_offset as usize + i as usize) / 8;
-            let bit_pos = ((bit_offset as usize) + i as usize) % 8;
-            let bit_val = ((self.bit_array[byte_pos] >> bit_pos) & 1) as u8;
-            if bit_val == 0 {
-                self.bit_array[byte_pos] |= 1 << bit_pos; // Set bit
-                break;
+        for i in first_bit..last_bit {
+            if self.bb[i] {
+                self.bb.set(i, false);
+            } else {
+                self.bb.set(i, true);
+                return;
             }
         }
+        // if we are here, it means all bits were set to 1, and we modified them to zero, 
+        // so we need to reset them to 1, max value
+        for i in first_bit..last_bit {
+            self.bb.set(i, true);
+        }
     }
+
 
     /// Add an item to the filter, incrementing only the smallest counters
     pub fn add<T: Hash>(&mut self, item: &T) {
