@@ -1,6 +1,6 @@
 import re
 import matplotlib.pyplot as plt
-
+import sys
 # Initialize lists to store extracted values
 n_elements = []
 overestimation_mean_opt = []
@@ -9,7 +9,7 @@ insertion_time_opt = []
 insertion_time_non_opt = []
 
 # Regular expressions to extract data
-n_elements_re = re.compile(r'Checking overestimation rate with n_elements = (\d+)')
+n_elements_re = re.compile(r' Checking overestimation rate with n_elements = (\d+)')
 insertion_time_opt_re = re.compile(r'Insertion time, with the optimization: ([\d\.]+)([µmns]+)')
 insertion_time_non_opt_re = re.compile(r'Insertion time, without the optimization: ([\d\.]+)([µmns]+)')
 overestimation_mean_opt_re = re.compile(r'Overestimation rate, optimized:.*?Overestimation mean: ([\d\.]+)', re.DOTALL)
@@ -18,9 +18,10 @@ overestimation_mean_non_opt_re = re.compile(r'Overestimation rate, non optimized
 def convert_time_to_seconds(value, unit):
     conversions = {'s': 1, 'ms': 1e-3, 'µs': 1e-6, 'ns': 1e-9}
     return float(value) * conversions[unit]
-
+# the input file is an argument
+input_file = sys.argv[1]
 # Read and parse the log file
-with open("log_tests.txt", "r") as file:
+with open(input_file, "r") as file:
     content = file.read()
     
     n_elements = [int(n) for n in n_elements_re.findall(content)]

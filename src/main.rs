@@ -238,7 +238,7 @@ fn main() {
     // generate a dictionary of random kmers with counts
     // each kmer appears between 1 and 10 times
     let k = 31;
-    let max_nb_elements = 50_000_001;
+    let max_nb_elements = 100_000_001;
     let mut rng = rand::rng();
     println!("Generating kmers...");
     let mut kmers = HashMap::new();
