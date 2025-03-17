@@ -2,7 +2,7 @@
 
 ---
 **TL;DR** A simple way to reduce overestimations in counting Bloom filters.
-![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/cbf.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/min_inc_cbf_teaser.png)
 
 ### Context 
 Bloom filters are probabilistic data structures used to test whether an element is a member of a set. A Bloom filter is an array of *m* bits, initially all set to 0. It uses multiple (*k*) hash functions to map any element to *k* addresses in the array. When inserting an element *x*, all the *k* bits corresponding to the *k* hash values of *x* are set to 1.  
@@ -79,7 +79,7 @@ This modification has three main drawbacks:
 In this case, the abundance of *a* is reported as 0, even though it was inserted once and never removed.
 
 ### Results
-![](https://github.com/pierrepeterlongo/minimal_increment_CBF/tree/main/docs/assest/images/minimal_increase_CBF_results.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/minimal_increase_CBF_results.png)
 In this experiment, I created a Bloom filter with 50 million cells (*m=50000000*), using *k=7* hash functions and storing *b=4* bits per cell. I stored an increasing number of elements (random DNA words of length 31) in the filter (x-axis), with each element being inserted between 1 and 10 times (randomly).  
 The results compare the "minimal increase counting Bloom filter" (*min_inc_cBF*) with a classical counting Bloom filter (*cBF*). 
 
@@ -88,7 +88,7 @@ We can see that the *min_inc_cBF* overestimation rate is 2 to 3 times smaller th
 
 Interestingly, for the usual ratio of *n/m < 0.1* (where *n* is the number of stored elements), the results highlight that this approach performs very well for these typical values, as shown in the zoomed-in view below:
 
-![](../assets/images/minimal_increase_CBF_results_head.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/minimal_increase_CBF_results_head.png)
 
 ### Prototype (Rust)
 See [https://github.com/pierrepeterlongo/minimal_increment_CBF](https://github.com/pierrepeterlongo/minimal_increment_CBF)
