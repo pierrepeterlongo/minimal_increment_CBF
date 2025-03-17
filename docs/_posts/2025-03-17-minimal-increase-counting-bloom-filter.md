@@ -2,7 +2,7 @@
 
 ---
 **TL;DR** A simple way to reduce overestimations in counting Bloom filters.
-![](assets/images/min_inc_cbf_teaser.png)
+![](/assets/images/min_inc_cbf_teaser.png)
 
 ### Context 
 Bloom filters are probabilistic data structures used to test whether an element is a member of a set. A Bloom filter is an array of $m$ bits, initially all set to 0. It uses multiple ($k$) hash functions to map any element to $k$ addresses in the array. When inserting an element $x$, all the $k$ bits corresponding to the $k$ hash values of $x$ are set to 1.  
