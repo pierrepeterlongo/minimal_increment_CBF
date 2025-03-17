@@ -167,6 +167,7 @@ fn check_no_fn_no_underestimation(x: u8, num_hashes: usize, size: usize, n_eleme
     
     let mut rng = rand::rng();
 
+    println!("Checking with size = {}, num_hashes = {}, x = {}, and {} elements", size, num_hashes, x, n_elements);
     // generate an array of random kmers. 
     // each kmer appears between 1 and 10 times
     let k = 31; // kmer length
@@ -204,6 +205,7 @@ fn check_no_fn_no_underestimation(x: u8, num_hashes: usize, size: usize, n_eleme
     }
     let duration = start.elapsed();
     println!("Count time: {:?}", duration);
+    println!("No false negatives and no underestimations found");
 }
 
 
@@ -211,16 +213,22 @@ fn main() {
 
     let x = 4; // Number of bits per counter (max value = 2^4 - 1 = 15)
     let num_hashes = 7; // Number of hash functions
-    let size = 5_000_000; // Number of counters
+    let size = 50_000_000; // Number of counters
     let n_elements = 5_000_000; // Number of elements to insert
-    // println!("Checking there are no FN and no underestimations...");
-    // check_no_fn_no_underestimation(x, num_hashes, size, n_elements);
+    println!("Checking there are no FN and no underestimations...");
+    check_no_fn_no_underestimation(x, num_hashes, size, n_elements);
 
     // println!("Checking false positive rate...");
     // check_fp_rate(x, num_hashes, size, n_elements);
 
-    println!("Checking overestimation rate...");
-    check_overestimation_rate(x, num_hashes, size, n_elements);
+    // println!("Checking overestimation rate...");
+    // check_overestimation_rate(x, num_hashes, size, n_elements);
 
+    // test the overestimation rate with different values of n_elements
+    // test values from 1 to 50_000_001 in steps of 1_000_000
+    for n_elements in (0..=100).map(|x| x * 1_000_000) {
+        println!("\n Checking overestimation rate with n_elements = {}...", n_elements);
+        check_overestimation_rate(x, num_hashes, size, n_elements +1);
+    }
     println!("All tests passed!");
 }
