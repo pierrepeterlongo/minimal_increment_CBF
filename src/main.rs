@@ -1,5 +1,4 @@
 //! Increment only minimum counting bloom filter
-use std::hash;
 use std::collections::HashMap;
 
 /* std use */
