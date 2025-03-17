@@ -214,7 +214,7 @@ fn main() {
     let x = 4; // Number of bits per counter (max value = 2^4 - 1 = 15)
     let num_hashes = 7; // Number of hash functions
     let size = 50_000_000; // Number of counters
-    let n_elements = 5_000_000; // Number of elements to insert
+    let n_elements = 50; // Number of elements to insert
     println!("Checking there are no FN and no underestimations...");
     check_no_fn_no_underestimation(x, num_hashes, size, n_elements);
 

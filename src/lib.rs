@@ -94,20 +94,24 @@ impl IncOnlyMinCbf {
     /// Add an item to the filter, incrementing only the smallest counters
     pub fn add<T: Hash>(&mut self, item: &T) {
         let mut min_value = self.max_value;
+        let mut min_hashes = Vec::new();
         let indices = self.hash_indices(item);
-        let mut values = Vec::new();
+
         for &index in indices.iter() {
             let current_value = self.get_counter(index);
-            values.push(current_value);
+
             if current_value < min_value {
                 min_value = current_value;
-            } 
-        }
-        // find all counters with the minimum value, and increment them
-        for (i, &value) in values.iter().enumerate() {
-            if value == min_value {
-                self.increment_counter(indices[i]);
+                min_hashes = vec![index];
+            } else if current_value == min_value {
+                min_hashes.push(index);
             }
+        }
+        
+        for &index in min_hashes.iter() {
+            self.increment_counter(index);
+
+
         }
     }
 
