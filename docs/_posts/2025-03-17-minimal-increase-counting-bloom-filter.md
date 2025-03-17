@@ -21,13 +21,13 @@ These variants all have their pros and cons (as does the method I propose here).
 ### What I propose: "the minimal increase counting Bloom filter"
 While preparing a lecture about counting Bloom filters, I wondered why "*When an element is added, the counters at **all** the $k$ positions determined by the hash functions are incremented*". The key word here is "all". Let me explain with an example using the classic counting Bloom filter.  
 
-![](https://github.com/pierrepeterlongo/minimal_increment_CBF/tree/main/docs/assest/images/cbf.png)
+![](images/cbf.png)
 
 In this example with $k=2$, we inserted $a$, $b$, and $c$. The reported value of $a$ is 2, while it was inserted only once. It is overestimated because other elements, $b$ and $c$, share addresses with $a$. 
 
 In the "minimal increase counting Bloom filter," when adding an element $x$ to a counting Bloom filter, only the minimal value(s) corresponding to this element are incremented. The example becomes: 
 
-![](../_images/min_inc_cbf.png)
+![](min_inc_cbf.png)
 
 In this example, when inserting $b$, only the minimal value (0) is incremented, the other one (highlighted), is not modified. The query for $a$ is not overestimated because $b$ and $c$ modified only cells with minimal values. 
 
