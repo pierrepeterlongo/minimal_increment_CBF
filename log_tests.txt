@@ -1,0 +1,4 @@
+Checking there are no FN and no underestimations...
+Checking with size = 50000000, num_hashes = 7, x = 4, and 5000000 elements
+Insertion time: 13.360198833s
+Query time: 8.655354542s
