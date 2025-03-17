@@ -2,7 +2,7 @@
 
 ---
 **TL;DR** A simple way to reduce overestimations in counting Bloom filters.
-![](assests/images/min_inc_cbf_teaser.png)
+![](https://github.com/pierrepeterlongo/minimal_increment_CBF/tree/main/docs/assest/images/min_inc_cbf_teaser.png)
 
 ### Context 
 Bloom filters are probabilistic data structures used to test whether an element is a member of a set. A Bloom filter is an array of $m$ bits, initially all set to 0. It uses multiple ($k$) hash functions to map any element to $k$ addresses in the array. When inserting an element $x$, all the $k$ bits corresponding to the $k$ hash values of $x$ are set to 1.  
@@ -21,7 +21,7 @@ These variants all have their pros and cons (as does the method I propose here).
 ### What I propose: "the minimal increase counting Bloom filter"
 While preparing a lecture about counting Bloom filters, I wondered why "*When an element is added, the counters at **all** the $k$ positions determined by the hash functions are incremented*". The key word here is "all". Let me explain with an example using the classic counting Bloom filter.  
 
-![](../_images/cbf.png)
+![](https://github.com/pierrepeterlongo/minimal_increment_CBF/tree/main/docs/assest/images/cbf.png)
 
 In this example with $k=2$, we inserted $a$, $b$, and $c$. The reported value of $a$ is 2, while it was inserted only once. It is overestimated because other elements, $b$ and $c$, share addresses with $a$. 
 
@@ -79,7 +79,7 @@ This modification has three main drawbacks:
 In this case, the abundance of $a$ is reported as 0, even though it was inserted once and never removed.
 
 ### Results
-![](../_images/minimal_increase_CBF_results.png)
+![](https://github.com/pierrepeterlongo/minimal_increment_CBF/tree/main/docs/assest/images/minimal_increase_CBF_results.png)
 In this experiment, I created a Bloom filter with 50 million cells ($m=50000000$), using $k=7$ hash functions and storing $b=4$ bits per cell. I stored an increasing number of elements (random DNA words of length 31) in the filter (x-axis), with each element being inserted between 1 and 10 times (randomly).  
 The results compare the "minimal increase counting Bloom filter" (*min_inc_cBF*) with a classical counting Bloom filter (*cBF*). 
 
