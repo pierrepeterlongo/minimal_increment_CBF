@@ -1,7 +1,40 @@
+title: "Datastructure thoughts"
+author: "Pierre Peterlongo"
+description: "" # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
+
+# Email / Social media user names used by the minima theme:
+# All of these are optional and can be removed or commented out
+email: "pierre.peterlongo@inria.fr"
+github_username: "pierrepeterlongo"
+#facebook_username: username
+#flickr_username: username
+#instagram_username: username
+#pinterest_username: username
+#youtube_username: username
+#googleplus_username: +username
+
+#########################################################################################
+######### Nothing below needs to be changed (unless you know what you're doing) #########
+#########################################################################################
+theme: "minima"
+
+rss: rss
+
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
+    
 plugins:
-  - jekyll-relative-links
-relative_links:
-  enabled: true
+  - jekyll-feed
+  - jekyll-sitemap
+
+titles_from_headings:
+  strip_title: true
   collections: true
-include:
-  - README.md
+
+defaults:
+  - scope:
+      path: ""
+      type: post
+    values:
+      tags: Other
