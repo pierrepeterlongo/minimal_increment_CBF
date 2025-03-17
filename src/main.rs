@@ -84,7 +84,7 @@ fn print_stats(overestimations: Vec<i32>) {
 }
 
 
-fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: usize, kmers: HashMap<String, u32>) {
+fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: usize, kmers: &HashMap<String, u32>) {
     println!("Creating IncOnlyMinCbf with size = {}, num_hashes = {}, x = {}", size, num_hashes, x);
     let mut iomcbf = IncOnlyMinCbf::new(size, num_hashes,x); // 1000 counters, 4 hashes, x-bit counters
     
@@ -252,7 +252,7 @@ fn main() {
     // test values from 1 to 50_000_001 in steps of 1_000_000
     for n_elements in (0..=100).map(|x| x * 1_000_000) {
         println!("\n Checking overestimation rate with n_elements = {}...", n_elements);
-        check_overestimation_rate(x, num_hashes, size, n_elements +1, kmers.clone());
+        check_overestimation_rate(x, num_hashes, size, n_elements +1, &kmers);
     }
     println!("All tests passed!");
 }

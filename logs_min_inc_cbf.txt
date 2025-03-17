@@ -1,0 +1,1078 @@
+Checking there are no FN and no underestimations...
+Checking with size = 50000000, num_hashes = 7, x = 8, and 50 elements
+Insertion time: 244.98µs
+Query time: 109.114µs
+Count time: 742.407µs
+No false negatives and no underestimations found
+Generating kmers...
+
+ Checking overestimation rate with n_elements = 0...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 1 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 5.195µs
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 598ns
+Overestimation rate, optimized:
+Overestimation sum: 0
+Overestimation mean: 0
+Overestimation median: 0
+Overestimation standard deviation: 0
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 2.729µs
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 840ns
+Overestimation rate, non optimized:
+Overestimation sum: 0
+Overestimation mean: 0
+Overestimation median: 0
+Overestimation standard deviation: 0
+
+ Checking overestimation rate with n_elements = 1000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 1000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 2.423324078s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 469.694979ms
+Overestimation rate, optimized:
+Overestimation sum: 0
+Overestimation mean: 0
+Overestimation median: 0
+Overestimation standard deviation: 0
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 1.541490823s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 468.082574ms
+Overestimation rate, non optimized:
+Overestimation sum: 1
+Overestimation mean: 0.000000999999000001
+Overestimation median: 0
+Overestimation standard deviation: 0.0009999989999965979
+
+ Checking overestimation rate with n_elements = 2000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 2000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 4.862418941s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 906.996307ms
+Overestimation rate, optimized:
+Overestimation sum: 42
+Overestimation mean: 0.00002099998950000525
+Overestimation median: 0
+Overestimation standard deviation: 0.008831733691630154
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 3.131347829s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 960.446328ms
+Overestimation rate, non optimized:
+Overestimation sum: 231
+Overestimation mean: 0.00011549994225002887
+Overestimation median: 0
+Overestimation standard deviation: 0.018747972797540677
+
+ Checking overestimation rate with n_elements = 3000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 3000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 7.287369507s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 1.399787605s
+Overestimation rate, optimized:
+Overestimation sum: 704
+Overestimation mean: 0.00023466658844447052
+Overestimation median: 0
+Overestimation standard deviation: 0.0244529084619875
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 4.76688554s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 1.446016795s
+Overestimation rate, non optimized:
+Overestimation sum: 3338
+Overestimation mean: 0.0011126662957779013
+Overestimation median: 0
+Overestimation standard deviation: 0.0558578039891431
+
+ Checking overestimation rate with n_elements = 4000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 4000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 9.743140799s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 1.810549636s
+Overestimation rate, optimized:
+Overestimation sum: 5158
+Overestimation mean: 0.0012894996776250806
+Overestimation median: 0
+Overestimation standard deviation: 0.059222768537890526
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 6.369613043s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 1.800869029s
+Overestimation rate, non optimized:
+Overestimation sum: 22942
+Overestimation mean: 0.005735498566125359
+Overestimation median: 0
+Overestimation standard deviation: 0.132595624558303
+
+ Checking overestimation rate with n_elements = 5000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 5000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 12.148476757s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 2.408324376s
+Overestimation rate, optimized:
+Overestimation sum: 21932
+Overestimation mean: 0.004386399122720175
+Overestimation median: 0
+Overestimation standard deviation: 0.11119333175322926
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 8.21787168s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 2.406245084s
+Overestimation rate, non optimized:
+Overestimation sum: 93100
+Overestimation mean: 0.018619996276000746
+Overestimation median: 0
+Overestimation standard deviation: 0.24452501654111578
+
+ Checking overestimation rate with n_elements = 6000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 6000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 14.630135392s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 2.764360639s
+Overestimation rate, optimized:
+Overestimation sum: 66294
+Overestimation mean: 0.011048998158500307
+Overestimation median: 0
+Overestimation standard deviation: 0.1780755860090665
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 9.856455915s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 2.872658935s
+Overestimation rate, non optimized:
+Overestimation sum: 275160
+Overestimation mean: 0.04585999235666794
+Overestimation median: 0
+Overestimation standard deviation: 0.39253768619902735
+
+ Checking overestimation rate with n_elements = 7000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 7000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 17.004519902s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 3.265117171s
+Overestimation rate, optimized:
+Overestimation sum: 162362
+Overestimation mean: 0.0231945681150617
+Overestimation median: 0
+Overestimation standard deviation: 0.2601598453263061
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 11.898927379s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 3.327093366s
+Overestimation rate, non optimized:
+Overestimation sum: 654690
+Overestimation mean: 0.09352712949612436
+Overestimation median: 0
+Overestimation standard deviation: 0.5723291255699071
+
+ Checking overestimation rate with n_elements = 8000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 8000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 19.364448184s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 3.66577352s
+Overestimation rate, optimized:
+Overestimation sum: 343602
+Overestimation mean: 0.04295024463121942
+Overestimation median: 0
+Overestimation standard deviation: 0.35794449323424893
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 14.017444579s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 3.736751793s
+Overestimation rate, non optimized:
+Overestimation sum: 1341815
+Overestimation mean: 0.16772685403414325
+Overestimation median: 0
+Overestimation standard deviation: 0.7814278581738605
+
+ Checking overestimation rate with n_elements = 9000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 9000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 23.734784149s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 4.243089768s
+Overestimation rate, optimized:
+Overestimation sum: 649937
+Overestimation mean: 0.07221521419830954
+Overestimation median: 0
+Overestimation standard deviation: 0.46910664982377576
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 15.888385642s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 4.279510924s
+Overestimation rate, non optimized:
+Overestimation sum: 2456210
+Overestimation mean: 0.27291219189864535
+Overestimation median: 0
+Overestimation standard deviation: 1.0130081341522506
+
+ Checking overestimation rate with n_elements = 10000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 10000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 24.334434186s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 4.62471671s
+Overestimation rate, optimized:
+Overestimation sum: 1120349
+Overestimation mean: 0.11203488879651112
+Overestimation median: 0
+Overestimation standard deviation: 0.5895688659336621
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 17.810501677s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 4.745525114s
+Overestimation rate, non optimized:
+Overestimation sum: 4104054
+Overestimation mean: 0.4104053589594641
+Overestimation median: 0
+Overestimation standard deviation: 1.2571056702867223
+
+ Checking overestimation rate with n_elements = 11000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 11000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 28.679953591s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 5.036944252s
+Overestimation rate, optimized:
+Overestimation sum: 1797314
+Overestimation mean: 0.16339216696434847
+Overestimation median: 0
+Overestimation standard deviation: 0.7174666578228764
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 19.321029934s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 5.136281331s
+Overestimation rate, non optimized:
+Overestimation sum: 6394030
+Overestimation mean: 0.5812754017022362
+Overestimation median: 0
+Overestimation standard deviation: 1.5093565565045364
+
+ Checking overestimation rate with n_elements = 12000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 12000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 28.966084178s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 5.58917033s
+Overestimation rate, optimized:
+Overestimation sum: 2720992
+Overestimation mean: 0.22674931443755714
+Overestimation median: 0
+Overestimation standard deviation: 0.8497118240445929
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 21.530510749s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 5.722684738s
+Overestimation rate, non optimized:
+Overestimation sum: 9421159
+Overestimation mean: 0.7850965179086236
+Overestimation median: 0
+Overestimation standard deviation: 1.7648463756161075
+
+ Checking overestimation rate with n_elements = 13000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 13000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 33.800696097s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 6.043282257s
+Overestimation rate, optimized:
+Overestimation sum: 3934200
+Overestimation mean: 0.3026307459514811
+Overestimation median: 0
+Overestimation standard deviation: 0.985560564757327
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 23.471230366s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 6.300825937s
+Overestimation rate, non optimized:
+Overestimation sum: 13272269
+Overestimation mean: 1.0209436906966392
+Overestimation median: 0
+Overestimation standard deviation: 2.020011340701447
+
+ Checking overestimation rate with n_elements = 14000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 14000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 33.894982907s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 6.631807876s
+Overestimation rate, optimized:
+Overestimation sum: 5470192
+Overestimation mean: 0.39072797209085913
+Overestimation median: 0
+Overestimation standard deviation: 1.122699034600994
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 25.463956939s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 6.735183506s
+Overestimation rate, non optimized:
+Overestimation sum: 17995569
+Overestimation mean: 1.2853976939001648
+Overestimation median: 0
+Overestimation standard deviation: 2.269694928713301
+
+ Checking overestimation rate with n_elements = 15000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 15000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 39.130391842s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 7.004795103s
+Overestimation rate, optimized:
+Overestimation sum: 7362220
+Overestimation mean: 0.4908146339456911
+Overestimation median: 0
+Overestimation standard deviation: 1.259352243468469
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 26.777019896s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 7.147821625s
+Overestimation rate, non optimized:
+Overestimation sum: 23655635
+Overestimation mean: 1.5770422281971848
+Overestimation median: 0
+Overestimation standard deviation: 2.513122404958615
+
+ Checking overestimation rate with n_elements = 16000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 16000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 38.589787963s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 7.515653096s
+Overestimation rate, optimized:
+Overestimation sum: 9635928
+Overestimation mean: 0.6022454623596586
+Overestimation median: 0
+Overestimation standard deviation: 1.39412974969172
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 28.604625854s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 7.600447852s
+Overestimation rate, non optimized:
+Overestimation sum: 30272359
+Overestimation mean: 1.892022319248605
+Overestimation median: 0
+Overestimation standard deviation: 2.747881053419772
+
+ Checking overestimation rate with n_elements = 17000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 17000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 40.541620257s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 7.808020959s
+Overestimation rate, optimized:
+Overestimation sum: 12320313
+Overestimation mean: 0.7247242514868087
+Overestimation median: 0
+Overestimation standard deviation: 1.5264454105168197
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 30.46214769s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 8.0210826s
+Overestimation rate, non optimized:
+Overestimation sum: 37893478
+Overestimation mean: 2.2290279865277656
+Overestimation median: 1
+Overestimation standard deviation: 2.9742685917601706
+
+ Checking overestimation rate with n_elements = 18000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 18000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 43.349336003s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 8.457537293s
+Overestimation rate, optimized:
+Overestimation sum: 15431676
+Overestimation mean: 0.8573152857047064
+Overestimation median: 0
+Overestimation standard deviation: 1.6553270495933374
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 33.265460195s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 8.683922003s
+Overestimation rate, non optimized:
+Overestimation sum: 46533456
+Overestimation mean: 2.58519185637823
+Overestimation median: 1
+Overestimation standard deviation: 3.191217499248982
+
+ Checking overestimation rate with n_elements = 19000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 19000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 49.29014232s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 8.649676188s
+Overestimation rate, optimized:
+Overestimation sum: 18985943
+Overestimation mean: 0.9992601053020997
+Overestimation median: 0
+Overestimation standard deviation: 1.779690961242905
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 34.506065574s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 9.073054092s
+Overestimation rate, non optimized:
+Overestimation sum: 56201798
+Overestimation mean: 2.95798921273741
+Overestimation median: 2
+Overestimation standard deviation: 3.3986001007346904
+
+ Checking overestimation rate with n_elements = 20000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 20000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 48.006478087s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 9.366867356s
+Overestimation rate, optimized:
+Overestimation sum: 22995453
+Overestimation mean: 1.1497725925113704
+Overestimation median: 0
+Overestimation standard deviation: 1.8991283760979552
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 36.98728176s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 9.447581124s
+Overestimation rate, non optimized:
+Overestimation sum: 66906526
+Overestimation mean: 3.3453261327336934
+Overestimation median: 2
+Overestimation standard deviation: 3.597127959732767
+
+ Checking overestimation rate with n_elements = 21000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 21000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 54.124592493s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 9.729882984s
+Overestimation rate, optimized:
+Overestimation sum: 27469284
+Overestimation mean: 1.30806108056852
+Overestimation median: 0
+Overestimation standard deviation: 2.0133386940900766
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 38.065037492s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 9.877032367s
+Overestimation rate, non optimized:
+Overestimation sum: 78657017
+Overestimation mean: 3.745572059734664
+Overestimation median: 3
+Overestimation standard deviation: 3.7878394859737567
+
+ Checking overestimation rate with n_elements = 22000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 22000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 52.703200337s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 10.314443927s
+Overestimation rate, optimized:
+Overestimation sum: 32410262
+Overestimation mean: 1.4731936603093791
+Overestimation median: 0
+Overestimation standard deviation: 2.1218020104459883
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 40.817272796s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 10.735647846s
+Overestimation rate, non optimized:
+Overestimation sum: 91468115
+Overestimation mean: 4.157641401925391
+Overestimation median: 3
+Overestimation standard deviation: 3.970752683974841
+
+ Checking overestimation rate with n_elements = 23000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 23000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 55.175155764s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 10.64970055s
+Overestimation rate, optimized:
+Overestimation sum: 37833095
+Overestimation mean: 1.6449171023949085
+Overestimation median: 0
+Overestimation standard deviation: 2.2247903373794435
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 41.842806659s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 10.819734288s
+Overestimation rate, non optimized:
+Overestimation sum: 105347959
+Overestimation mean: 4.58034584433279
+Overestimation median: 4
+Overestimation standard deviation: 4.1474427721477545
+
+ Checking overestimation rate with n_elements = 24000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 24000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 57.681767228s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 11.341863578s
+Overestimation rate, optimized:
+Overestimation sum: 43733171
+Overestimation mean: 1.8222153824076923
+Overestimation median: 1
+Overestimation standard deviation: 2.322032341689481
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 45.067943901s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 11.64258255s
+Overestimation rate, non optimized:
+Overestimation sum: 120306876
+Overestimation mean: 5.012786291133905
+Overestimation median: 5
+Overestimation standard deviation: 4.3182602816303275
+
+ Checking overestimation rate with n_elements = 25000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 25000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 59.564481347s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 11.436237132s
+Overestimation rate, optimized:
+Overestimation sum: 50120445
+Overestimation mean: 2.004817719807291
+Overestimation median: 1
+Overestimation standard deviation: 2.4135051100269393
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 45.980374643s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 11.880813238s
+Overestimation rate, non optimized:
+Overestimation sum: 136341604
+Overestimation mean: 5.453663941853442
+Overestimation median: 5
+Overestimation standard deviation: 4.48298037662943
+
+ Checking overestimation rate with n_elements = 26000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 26000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 62.300009179s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 12.408452952s
+Overestimation rate, optimized:
+Overestimation sum: 56977901
+Overestimation mean: 2.191457646482398
+Overestimation median: 1
+Overestimation standard deviation: 2.499010926808455
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 48.73983322s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 12.580016668s
+Overestimation rate, non optimized:
+Overestimation sum: 153448662
+Overestimation mean: 5.901871388389562
+Overestimation median: 6
+Overestimation standard deviation: 4.642752543244186
+
+ Checking overestimation rate with n_elements = 27000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 27000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 69.377600565s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 12.486049279s
+Overestimation rate, optimized:
+Overestimation sum: 64318284
+Overestimation mean: 2.3821585784385713
+Overestimation median: 2
+Overestimation standard deviation: 2.57916079788809
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 49.712410994s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 12.770860417s
+Overestimation rate, non optimized:
+Overestimation sum: 171637385
+Overestimation mean: 6.356939949742965
+Overestimation median: 6
+Overestimation standard deviation: 4.797807618247057
+
+ Checking overestimation rate with n_elements = 28000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 28000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 67.050504139s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 13.409012256s
+Overestimation rate, optimized:
+Overestimation sum: 72146315
+Overestimation mean: 2.5766540151194994
+Overestimation median: 2
+Overestimation standard deviation: 2.6537582091143594
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 52.895557778s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 13.687823574s
+Overestimation rate, non optimized:
+Overestimation sum: 190941320
+Overestimation mean: 6.819332613595264
+Overestimation median: 7
+Overestimation standard deviation: 4.948726397234274
+
+ Checking overestimation rate with n_elements = 29000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 29000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 74.412690349s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 13.568765907s
+Overestimation rate, optimized:
+Overestimation sum: 80464145
+Overestimation mean: 2.7746255939784277
+Overestimation median: 2
+Overestimation standard deviation: 2.723439328299236
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 53.483286045s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 13.702191593s
+Overestimation rate, non optimized:
+Overestimation sum: 211343132
+Overestimation mean: 7.28769395559676
+Overestimation median: 7
+Overestimation standard deviation: 5.096133924640918
+
+ Checking overestimation rate with n_elements = 30000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 30000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 71.845353962s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 14.365905346s
+Overestimation rate, optimized:
+Overestimation sum: 89258420
+Overestimation mean: 2.975280567490648
+Overestimation median: 3
+Overestimation standard deviation: 2.788409078894425
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 56.828531938s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 14.550300363s
+Overestimation rate, non optimized:
+Overestimation sum: 232847456
+Overestimation mean: 7.76158160794728
+Overestimation median: 8
+Overestimation standard deviation: 5.239901947695785
+
+ Checking overestimation rate with n_elements = 31000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 31000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 79.595076001s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 14.579797656s
+Overestimation rate, optimized:
+Overestimation sum: 98554651
+Overestimation mean: 3.1791821877683164
+Overestimation median: 3
+Overestimation standard deviation: 2.849026114802021
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 57.437465479s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 14.669388895s
+Overestimation rate, non optimized:
+Overestimation sum: 255480514
+Overestimation mean: 8.241306637377205
+Overestimation median: 8
+Overestimation standard deviation: 5.38098721994834
+
+ Checking overestimation rate with n_elements = 32000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 32000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 76.619886213s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 15.207484608s
+Overestimation rate, optimized:
+Overestimation sum: 108340237
+Overestimation mean: 3.3856323004489908
+Overestimation median: 3
+Overestimation standard deviation: 2.9055181484248203
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 60.585499558s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 15.446013319s
+Overestimation rate, non optimized:
+Overestimation sum: 279210919
+Overestimation mean: 8.725340946083096
+Overestimation median: 8
+Overestimation standard deviation: 5.5189294094546915
+
+ Checking overestimation rate with n_elements = 33000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 33000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 79.239850522s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 15.598964021s
+Overestimation rate, optimized:
+Overestimation sum: 118634165
+Overestimation mean: 3.5949745880310733
+Overestimation median: 3
+Overestimation standard deviation: 2.9584163956913945
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 61.158863944s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 15.380593976s
+Overestimation rate, non optimized:
+Overestimation sum: 304067598
+Overestimation mean: 9.214169357146384
+Overestimation median: 9
+Overestimation standard deviation: 5.6538972454444645
+
+ Checking overestimation rate with n_elements = 34000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 34000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 81.366150268s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 16.237738495s
+Overestimation rate, optimized:
+Overestimation sum: 129449986
+Overestimation mean: 3.807352417430811
+Overestimation median: 4
+Overestimation standard deviation: 3.0081058425276925
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 64.652254994s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 16.436739148s
+Overestimation rate, non optimized:
+Overestimation sum: 330092972
+Overestimation mean: 9.708616537981866
+Overestimation median: 9
+Overestimation standard deviation: 5.7871096501762755
+
+ Checking overestimation rate with n_elements = 35000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 35000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 83.169033795s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 16.418918941s
+Overestimation rate, optimized:
+Overestimation sum: 140784838
+Overestimation mean: 4.022423827930748
+Overestimation median: 4
+Overestimation standard deviation: 3.05478942770471
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 64.829693421s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 16.378959137s
+Overestimation rate, non optimized:
+Overestimation sum: 357228791
+Overestimation mean: 10.206536594098955
+Overestimation median: 10
+Overestimation standard deviation: 5.91760731613383
+
+ Checking overestimation rate with n_elements = 36000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 36000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 86.346575509s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 17.404467604s
+Overestimation rate, optimized:
+Overestimation sum: 152646983
+Overestimation mean: 4.24019385443906
+Overestimation median: 4
+Overestimation standard deviation: 3.098785515586301
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 68.497183625s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 17.451549373s
+Overestimation rate, non optimized:
+Overestimation sum: 385514178
+Overestimation mean: 10.708726869202032
+Overestimation median: 10
+Overestimation standard deviation: 6.046231505581832
+
+ Checking overestimation rate with n_elements = 37000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 37000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 94.800531504s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 17.427593474s
+Overestimation rate, optimized:
+Overestimation sum: 165056223
+Overestimation mean: 4.460978879433004
+Overestimation median: 4
+Overestimation standard deviation: 3.140202043827249
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 68.83440813s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 17.415633243s
+Overestimation rate, non optimized:
+Overestimation sum: 414919873
+Overestimation mean: 11.214050318539181
+Overestimation median: 11
+Overestimation standard deviation: 6.172359851339503
+
+ Checking overestimation rate with n_elements = 38000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 38000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 91.234945093s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 18.337444789s
+Overestimation rate, optimized:
+Overestimation sum: 178013516
+Overestimation mean: 4.684566087248261
+Overestimation median: 5
+Overestimation standard deviation: 3.1795487339553636
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 72.516418675s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 18.583252107s
+Overestimation rate, non optimized:
+Overestimation sum: 445498719
+Overestimation mean: 11.72365019148289
+Overestimation median: 11
+Overestimation standard deviation: 6.296769574785995
+
+ Checking overestimation rate with n_elements = 39000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 39000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 100.302984571s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 18.432605446s
+Overestimation rate, optimized:
+Overestimation sum: 191527114
+Overestimation mean: 4.9109515151038075
+Overestimation median: 5
+Overestimation standard deviation: 3.216889718172842
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 72.720967318s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 18.27318252s
+Overestimation rate, non optimized:
+Overestimation sum: 477248782
+Overestimation mean: 12.237147942637232
+Overestimation median: 12
+Overestimation standard deviation: 6.41940502058897
+
+ Checking overestimation rate with n_elements = 40000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 40000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 95.950515335s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 19.356567807s
+Overestimation rate, optimized:
+Overestimation sum: 205603877
+Overestimation mean: 5.14009679649758
+Overestimation median: 5
+Overestimation standard deviation: 3.252267604611307
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 76.435180907s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 19.442668741s
+Overestimation rate, non optimized:
+Overestimation sum: 510143920
+Overestimation mean: 12.753597681160057
+Overestimation median: 12
+Overestimation standard deviation: 6.5402333750425194
+
+ Checking overestimation rate with n_elements = 41000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 41000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 105.073701542s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 19.150724597s
+Overestimation rate, optimized:
+Overestimation sum: 220258583
+Overestimation mean: 5.372160429947306
+Overestimation median: 6
+Overestimation standard deviation: 3.2857034301760817
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 76.312888595s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 19.187638219s
+Overestimation rate, non optimized:
+Overestimation sum: 544196001
+Overestimation mean: 13.273072871388466
+Overestimation median: 13
+Overestimation standard deviation: 6.659023562484395
+
+ Checking overestimation rate with n_elements = 42000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 42000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 100.447315954s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 20.202287716s
+Overestimation rate, optimized:
+Overestimation sum: 235485347
+Overestimation mean: 5.606793842695384
+Overestimation median: 6
+Overestimation standard deviation: 3.317899904000938
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 80.312349533s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 19.569169419s
+Overestimation rate, non optimized:
+Overestimation sum: 579459695
+Overestimation mean: 13.796659076270021
+Overestimation median: 14
+Overestimation standard deviation: 6.775994115839076
+
+ Checking overestimation rate with n_elements = 43000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 43000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 102.203277203s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 20.21673825s
+Overestimation rate, optimized:
+Overestimation sum: 251279133
+Overestimation mean: 5.843700631541846
+Overestimation median: 6
+Overestimation standard deviation: 3.3481186996252585
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 80.299632306s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 20.138647644s
+Overestimation rate, non optimized:
+Overestimation sum: 615890297
+Overestimation mean: 14.323029829696981
+Overestimation median: 14
+Overestimation standard deviation: 6.891127085463428
+
+ Checking overestimation rate with n_elements = 44000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 44000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 105.379413113s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 21.191295069s
+Overestimation rate, optimized:
+Overestimation sum: 267637693
+Overestimation mean: 6.082674702666484
+Overestimation median: 6
+Overestimation standard deviation: 3.3772071195467377
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 84.291341858s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 21.220315509s
+Overestimation rate, non optimized:
+Overestimation sum: 653510612
+Overestimation mean: 14.852513571533782
+Overestimation median: 15
+Overestimation standard deviation: 7.005781912717695
+
+ Checking overestimation rate with n_elements = 45000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 45000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 115.153294585s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 21.856432213s
+Overestimation rate, optimized:
+Overestimation sum: 284567789
+Overestimation mean: 6.3237285039171445
+Overestimation median: 7
+Overestimation standard deviation: 3.4047362399624936
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 86.372809038s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 21.081588288s
+Overestimation rate, non optimized:
+Overestimation sum: 692273315
+Overestimation mean: 15.383851102581087
+Overestimation median: 15
+Overestimation standard deviation: 7.117992251152269
+
+ Checking overestimation rate with n_elements = 46000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 46000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 110.158713521s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 22.166014704s
+Overestimation rate, optimized:
+Overestimation sum: 302073050
+Overestimation mean: 6.566805292025972
+Overestimation median: 7
+Overestimation standard deviation: 3.4309177657349714
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 88.292574957s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 22.140271618s
+Overestimation rate, non optimized:
+Overestimation sum: 732275102
+Overestimation mean: 15.919023610456009
+Overestimation median: 16
+Overestimation standard deviation: 7.229079257062404
+
+ Checking overestimation rate with n_elements = 47000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 47000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 120.304245784s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 22.062436625s
+Overestimation rate, optimized:
+Overestimation sum: 320136155
+Overestimation mean: 6.811407408267928
+Overestimation median: 7
+Overestimation standard deviation: 3.455834231961365
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 88.01457772s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 22.15084217s
+Overestimation rate, non optimized:
+Overestimation sum: 773430287
+Overestimation mean: 16.455963203064613
+Overestimation median: 16
+Overestimation standard deviation: 7.338748820643786
+
+ Checking overestimation rate with n_elements = 48000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 48000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 114.984237745s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 23.232851297s
+Overestimation rate, optimized:
+Overestimation sum: 338747129
+Overestimation mean: 7.057231707141006
+Overestimation median: 7
+Overestimation standard deviation: 3.479645496245204
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 92.241260629s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 23.281722385s
+Overestimation rate, non optimized:
+Overestimation sum: 815807432
+Overestimation mean: 16.995987812583586
+Overestimation median: 17
+Overestimation standard deviation: 7.447293891970093
+
+ Checking overestimation rate with n_elements = 49000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 49000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 125.305398552s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 22.938433534s
+Overestimation rate, optimized:
+Overestimation sum: 357920539
+Overestimation mean: 7.304500646846925
+Overestimation median: 8
+Overestimation standard deviation: 3.5026068144848246
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 91.944381463s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 23.06963186s
+Overestimation rate, non optimized:
+Overestimation sum: 859369589
+Overestimation mean: 17.5381545196295
+Overestimation median: 17
+Overestimation standard deviation: 7.555063570936145
+
+ Checking overestimation rate with n_elements = 50000000...
+Creating IncOnlyMinCbf with size = 50000000, num_hashes = 7, x = 8
+Adding 50000001 kmers to the IncOnlyMinCbf with optimization...
+Insertion time, with the optimization: 119.536219368s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 24.106012796s
+Overestimation rate, optimized:
+Overestimation sum: 377647271
+Overestimation mean: 7.5529452689410945
+Overestimation median: 8
+Overestimation standard deviation: 3.5242119055559593
+Adding kmers to the IncOnlyMinCbf without optimization...
+Insertion time, without the optimization: 96.264606018s
+Querying 50000001 kmers from the IncOnlyMinCbf...
+Query time: 24.312442911s
+Overestimation rate, non optimized:
+Overestimation sum: 904131990
+Overestimation mean: 18.08263943834721
+Overestimation median: 18
+Overestimation standard deviation: 7.661024800268436

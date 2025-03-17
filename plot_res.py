@@ -29,10 +29,7 @@ with open(input_file, "r") as file:
     insertion_time_non_opt = [convert_time_to_seconds(v, u) for v, u in insertion_time_non_opt_re.findall(content)]
     overestimation_mean_opt = [float(v) for v in overestimation_mean_opt_re.findall(content)]
     overestimation_mean_non_opt = [float(v) for v in overestimation_mean_non_opt_re.findall(content)]
-    print(f"overestimation_mean_non_opt: {overestimation_mean_non_opt}")
-    print(f"overestimation_mean_opt: {overestimation_mean_opt}")
-    print(f"insertion_time_non_opt: {insertion_time_non_opt}")
-    print(f"insertion_time_opt: {insertion_time_opt}")
+    
     
     # Ensure all lists have the same length
     min_length = min(len(n_elements), len(overestimation_mean_opt), len(overestimation_mean_non_opt), len(insertion_time_opt), len(insertion_time_non_opt))
@@ -45,29 +42,32 @@ with open(input_file, "r") as file:
 # Debugging: Print extracted values
 print("Extracted Data:")
 print("n_elements:", n_elements)
-print("Overestimation Mean (Optimized):", overestimation_mean_opt)
-print("Overestimation Mean (Non-Optimized):", overestimation_mean_non_opt)
-print("Insertion Time (Optimized):", insertion_time_opt)
-print("Insertion Time (Non-Optimized):", insertion_time_non_opt)
+print("Overestimation average (min_inc_cBF):", overestimation_mean_opt)
+print("Overestimation average (cBF):", overestimation_mean_non_opt)
+print("Insertion Time (min_inc_cBF):", insertion_time_opt)
+print("Insertion Time (cBF):", insertion_time_non_opt)
 
 # Plot the data
 fig, ax1 = plt.subplots()
 
 ax1.set_xlabel("Number of elements")
-ax1.set_ylabel("Overestimation Mean", color='tab:blue')
-ax1.plot(n_elements, overestimation_mean_opt, 'o-', color='tab:blue', label='Overestimation Mean (Optimized)')
-ax1.plot(n_elements, overestimation_mean_non_opt, 's-', color='tab:cyan', label='Overestimation Mean (Non-Optimized)')
+ax1.set_ylabel("Overestimation Average", color='tab:blue')
+ax1.plot(n_elements, overestimation_mean_opt, 'o-', color='tab:blue', label='Overestimation Average (min_inc_cBF)')
+ax1.plot(n_elements, overestimation_mean_non_opt, 's-', color='tab:cyan', label='Overestimation Average (cBF)')
 ax1.tick_params(axis='y', labelcolor='tab:blue')
 # ax1.set_yscale('log')
 ax1.legend(loc='upper left')
 
 ax2 = ax1.twinx()
 ax2.set_ylabel("Insertion Time (seconds)", color='tab:red')
-ax2.plot(n_elements, insertion_time_opt, 'o--', color='tab:red', label='Insertion Time (Optimized)')
-ax2.plot(n_elements, insertion_time_non_opt, 's--', color='tab:orange', label='Insertion Time (Non-Optimized)')
+ax2.plot(n_elements, insertion_time_opt, 'o--', color='tab:red', label='Insertion Time (min_inc_cBF)')
+ax2.plot(n_elements, insertion_time_non_opt, 's--', color='tab:orange', label='Insertion Time (cBF)')
 ax2.tick_params(axis='y', labelcolor='tab:red')
 # ax2.set_yscale('log')
-ax2.legend(loc='upper right')
+ax2.legend(loc='upper center')
 
-plt.title("Overestimation Mean and Insertion Time vs Number of Elements")
+plt.title("Overestimation Average and Insertion Time vs Number of Elements,\n with or without the \"minimal increment\" optimization")
+
+# plt.title("Overestimation Average vs Number of Elements,\n with or without the \"minimal increment\" optimization")
+
 plt.show()
