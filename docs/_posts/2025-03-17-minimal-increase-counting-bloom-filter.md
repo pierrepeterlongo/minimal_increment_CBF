@@ -2,7 +2,7 @@
 
 ---
 **TL;DR** A simple way to reduce overestimations in counting Bloom filters.
-![](/docs/images/cbf.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/cbf.png)
 
 ### Context 
 Bloom filters are probabilistic data structures used to test whether an element is a member of a set. A Bloom filter is an array of *m* bits, initially all set to 0. It uses multiple (*k*) hash functions to map any element to *k* addresses in the array. When inserting an element *x*, all the *k* bits corresponding to the *k* hash values of *x* are set to 1.  
@@ -19,15 +19,15 @@ There are numerous clever variants of the counting Bloom filter data structure. 
 These variants all have their pros and cons (as does the method I propose here). They often involve sophisticated algorithmic and/or hardware techniques.
 
 ### What I propose: "the minimal increase counting Bloom filter"
-While preparing a lecture about counting Bloom filters, I wondered why "*When an element is added, the counters at **all** the *k* positions determined by the hash functions are incremented*". The key word here is "all". Let me explain with an example using the classic counting Bloom filter.  
+While preparing a lecture about counting Bloom filters, I wondered why "*When an element is added, the counters at **all** the k positions determined by the hash functions are incremented*". The key word here is "all". Let me explain with an example using the classic counting Bloom filter.  
 
-![](images/cbf.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/cbf.png)
 
 In this example with *k=2*, we inserted *a*, *b*, and *c*. The reported value of *a* is 2, while it was inserted only once. It is overestimated because other elements, *b* and *c*, share addresses with *a*. 
 
 In the "minimal increase counting Bloom filter," when adding an element *x* to a counting Bloom filter, only the minimal value(s) corresponding to this element are incremented. The example becomes: 
 
-![](min_inc_cbf.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/min_inc_cbf.png)
 
 In this example, when inserting *b*, only the minimal value (0) is incremented, the other one (highlighted), is not modified. The query for *a* is not overestimated because *b* and *c* modified only cells with minimal values. 
 
@@ -74,7 +74,7 @@ This modification has three main drawbacks:
 - Adding an element is not parallelizable (since the minimum must be collected). 
 - Decreasing the abundance of an element is no longer possible. For example: 
 
-![](../_images/min_inc_cbf_decrease.png)
+![](https://pierrepeterlongo.github.io/minimal_increment_CBF/images/min_inc_cbf_decrease.png)
 
 In this case, the abundance of *a* is reported as 0, even though it was inserted once and never removed.
 
