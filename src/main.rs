@@ -84,28 +84,23 @@ fn print_stats(overestimations: Vec<i32>) {
 }
 
 
-fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: usize) {
+fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: usize, kmers: HashMap<String, u32>) {
     println!("Creating IncOnlyMinCbf with size = {}, num_hashes = {}, x = {}", size, num_hashes, x);
     let mut iomcbf = IncOnlyMinCbf::new(size, num_hashes,x); // 1000 counters, 4 hashes, x-bit counters
     
-    let mut rng = rand::rng();
 
-    // generate a dictionary of random kmers with counts
-    // each kmer appears between 1 and 10 times
-    let k = 31;
-    println!("Generating kmers...");
-    let mut kmers = HashMap::new();
-    for _ in 0..n_elements {
-        let kmer = generate_random_kmer(k);
-        let count = rng.random_range(1..=10);
-        kmers.insert(kmer, count);
-    }
-    println!("Adding kmers to the IncOnlyMinCbf with optimization...");
+    
+    println!("Adding {} kmers to the IncOnlyMinCbf with optimization...", n_elements);
     // add all kmers to the iomcbf, measuring the time
     let start = std::time::Instant::now();
+    let mut i = 0;
     for (kmer, count) in kmers.iter() {
         for _ in 0..*count {
             iomcbf.add(kmer);
+        }
+        i += 1;
+        if i == n_elements {
+            break;
         }
     }
     let duration = start.elapsed();
@@ -118,10 +113,15 @@ fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: 
     println!("Querying {} kmers from the IncOnlyMinCbf...", kmers.len());
     let start: std::time::Instant = std::time::Instant::now();
     let mut overestimations = vec![];
+    let mut i = 0;
     for (kmer, true_count) in kmers.iter() {
         let count = iomcbf.count(kmer);
         let overestimation = count as i32 - *true_count as i32;
         overestimations.push(overestimation);
+        i += 1;
+        if i == n_elements {
+            break;
+        }
     }
     let duration: std::time::Duration = start.elapsed();
     println!("Query time: {:?}", duration);
@@ -135,9 +135,14 @@ fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: 
     println!("Adding kmers to the IncOnlyMinCbf without optimization...");
     // add all kmers to the cbf, measuring the time
     let start = std::time::Instant::now();
+    let mut i = 0;
     for (kmer, count) in kmers.iter() {
         for _ in 0..*count {
             cbf.add_all(kmer);
+        }
+        i += 1;
+        if i == n_elements {
+            break;
         }
     }
     let duration = start.elapsed();
@@ -149,10 +154,15 @@ fn check_overestimation_rate(x: u8, num_hashes: usize, size: usize, n_elements: 
     println!("Querying {} kmers from the IncOnlyMinCbf...", kmers.len());
     let start = std::time::Instant::now();
     let mut overestimations_non_optimized = vec![];
+    let mut i = 0;
     for (kmer, true_count) in kmers.iter() {
         let count = cbf.count(kmer);
         let overestimation = count as i32 - *true_count as i32;
         overestimations_non_optimized.push(overestimation);
+        i += 1;
+        if i == n_elements {
+            break;
+        }
     }
     let duration = start.elapsed();
     println!("Query time: {:?}", duration);
@@ -224,11 +234,25 @@ fn main() {
     // println!("Checking overestimation rate...");
     // check_overestimation_rate(x, num_hashes, size, n_elements);
 
+    // generate kmers
+    // generate a dictionary of random kmers with counts
+    // each kmer appears between 1 and 10 times
+    let k = 31;
+    let max_nb_elements = 50_000_001;
+    let mut rng = rand::rng();
+    println!("Generating kmers...");
+    let mut kmers = HashMap::new();
+    for _ in 0..max_nb_elements {
+        let kmer = generate_random_kmer(k);
+        let count = rng.random_range(1..=10);
+        kmers.insert(kmer, count);
+    }
+
     // test the overestimation rate with different values of n_elements
     // test values from 1 to 50_000_001 in steps of 1_000_000
     for n_elements in (0..=100).map(|x| x * 1_000_000) {
         println!("\n Checking overestimation rate with n_elements = {}...", n_elements);
-        check_overestimation_rate(x, num_hashes, size, n_elements +1);
+        check_overestimation_rate(x, num_hashes, size, n_elements +1, kmers.clone());
     }
     println!("All tests passed!");
 }
