@@ -2,10 +2,10 @@
 
 ---
 **TL;DR** A simple way to reduce overestimations in counting Bloom filters.
-![](/docs/images/min_inc_cbf_teaser.png)
+![](docs/images/min_inc_cbf_teaser.png)
 
 ### Context 
-Bloom filters are probabilistic data structures used to test whether an element is a member of a set. A Bloom filter is an array of $m$ bits, initially all set to 0. It uses multiple ($k$) hash functions to map any element to $k$ addresses in the array. When inserting an element $x$, all the $k$ bits corresponding to the $k$ hash values of $x$ are set to 1.  
+Bloom filters are probabilistic data structures used to test whether an element is a member of a set. A Bloom filter is an array of $m$ bits, initially all set to 0. It uses multiple ($$ k $$) hash functions to map any element to $k$ addresses in the array. When inserting an element $x$, all the $k$ bits corresponding to the $k$ hash values of $x$ are set to 1.  
 When checking the membership of an element $x$, if any of the $k$ corresponding bits is 0, the element is absent. Otherwise, it is reported as present, although this might be a false positive since the $k$ bits may have been set to 1 by other inserted elements.
 
 Counting Bloom filters [1] extend Bloom filters by using $b$ bits per address instead of just one. This allows **1/** elements to be added and removed dynamically, and **2/** elements to be associated with their abundance (up to $2^b-1$). When an element is added, the counters at all the $k$ positions determined by the hash functions are incremented. To remove an element, the same counters are decremented. 
