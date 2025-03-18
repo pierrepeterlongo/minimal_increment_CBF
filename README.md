@@ -3,7 +3,7 @@ A classical counting Bloom filter limiting the overestimation rate by increasing
 
 Blog post: [https://pierrepeterlongo.github.io/2025/03/17/minimal-increase-counting-bloom-filter.html](https://pierrepeterlongo.github.io/2025/03/17/minimal-increase-counting-bloom-filter.html)
 
-## Licence 
+## License 
 AGPL-3.0
 
 ## Install
