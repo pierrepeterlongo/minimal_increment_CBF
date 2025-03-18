@@ -3,7 +3,9 @@ use std::hash::{Hash, Hasher};
 
 use bitvec::prelude::*;
 
-
+/// Increment-Only Minimum Counting Bloom Filter
+/// Uses bitbox to store counters in a packed format
+/// The counters are incremented only if they are the smallest among all the counters
 pub struct IncOnlyMinCbf{
     bb: BitBox,  // Stores all counters in a packed format
     size: usize,         // Total number of counters

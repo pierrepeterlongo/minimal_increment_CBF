@@ -24,7 +24,7 @@ fn generate_random_kmer(k: usize) -> String {
     kmer
 }
 
-fn check_fp_rate(x: u8, num_hashes: usize, size: usize, n_elements: usize) {
+fn _check_fp_rate(x: u8, num_hashes: usize, size: usize, n_elements: usize) {
     let mut iomcbf = IncOnlyMinCbf::new(size, num_hashes,x); // 1000 counters, 4 hashes, x-bit counters
     
     let mut rng = rand::rng();
