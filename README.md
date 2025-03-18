@@ -15,6 +15,11 @@ cargo install --path .
 
 The executable name is `iomcbf`.
 
+## Generate documentation for API usage:
+```bash
+cargo doc
+```
+
 ## Usage
 The `lib.rs` file contains a class including the creation, the insertion, and the query of words in a "minimal increament counting bloom filter.
 
